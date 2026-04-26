@@ -1,0 +1,44 @@
+{
+  "app": {
+    "title": "ضليع",
+    "subtitle": "سد الفجوة بين الإمكانيات والإتقان المهني",
+    "tagline": "ارفع سيرتك الذاتية، أخبرنا بهدفك، ودع فرقة الذكاء الاصطناعي لدينا تبني طريقك إلى الإتقان."
+  },
+  "language": {
+    "switch": "English"
+  },
+  "input": {
+    "uploadLabel": "ارفع سيرتك الذاتية (PDF أو DOCX)",
+    "uploadPlaceholder": "اضغط للرفع أو اسحب وأفلت",
+    "roleLabel": "الدور الوظيفي المطلوب",
+    "rolePlaceholder": "مثال: عالم بيانات، مهندس برمجيات",
+    "submit": "حلّل إمكانياتي",
+    "submitting": "جاري التحليل...",
+    "startOver": "ابدأ من جديد"
+  },
+  "progress": {
+    "title": "جاري تحليل إمكانياتك...",
+    "start": "بدء التحليل...",
+    "skill_auditor": "تدقيق مهاراتك...",
+    "market_scout": "استكشاف السوق...",
+    "content_curator": "تجميع مصادر التعلم...",
+    "roadmap_architect": "بناء خارطة طريقك...",
+    "performance_coach": "مراجعة التوجيه...",
+    "talent_advocate": "إعداد تقرير الجاهزية..."
+  },
+  "results": {
+    "title": "تحولك المهني",
+    "roadmapTab": "خارطة طريقي",
+    "reportTab": "تقرير الجاهزية",
+    "week": "الأسبوع",
+    "skills": "المهارات",
+    "objectives": "الأهداف",
+    "resources": "الموارد",
+    "executiveSummary": "الملخص التنفيذي",
+    "skillAlignment": "درجة توافق المهارات",
+    "keyStrengths": "نقاط القوة الرئيسية",
+    "remainingGaps": "الفجوات المتبقية",
+    "recruiterPitch": "عرض الموارد البشرية",
+    "error": "حدث خطأ ما. يرجى المحاولة مرة أخرى."
+  }
+}

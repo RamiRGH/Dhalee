@@ -1,0 +1,24 @@
+[project]
+name = "dhalee-backend"
+version = "0.1.0"
+description = "Dhalee POC backend"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "python-multipart",
+    "pydantic",
+    "pydantic-settings",
+    "langgraph",
+    "langchain",
+    "langchain-openai",
+    "openai",
+    "pdfplumber",
+    "python-docx",
+    "httpx",
+    "tavily-python",
+    "python-dotenv",
+]
+
+[dependency-groups]
+dev = []

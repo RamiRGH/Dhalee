@@ -1,0 +1,44 @@
+{
+  "app": {
+    "title": "Dhalee",
+    "subtitle": "Bridging the Gap Between Potential and Professional Mastery",
+    "tagline": "Upload your CV, tell us your goal, and let our AI squad build your path to mastery."
+  },
+  "language": {
+    "switch": "العربية"
+  },
+  "input": {
+    "uploadLabel": "Upload your CV (PDF or DOCX)",
+    "uploadPlaceholder": "Click to upload or drag and drop",
+    "roleLabel": "Desired Role",
+    "rolePlaceholder": "e.g. Data Scientist, Software Engineer",
+    "submit": "Analyze My Potential",
+    "submitting": "Analyzing...",
+    "startOver": "Start Over"
+  },
+  "progress": {
+    "title": "Analyzing your potential...",
+    "start": "Starting analysis...",
+    "skill_auditor": "Auditing your skills...",
+    "market_scout": "Scouting the market...",
+    "content_curator": "Curating learning resources...",
+    "roadmap_architect": "Building your roadmap...",
+    "performance_coach": "Coaching review...",
+    "talent_advocate": "Preparing your readiness report..."
+  },
+  "results": {
+    "title": "Your Career Transformation",
+    "roadmapTab": "My Roadmap",
+    "reportTab": "Readiness Report",
+    "week": "Week",
+    "skills": "Skills",
+    "objectives": "Objectives",
+    "resources": "Resources",
+    "executiveSummary": "Executive Summary",
+    "skillAlignment": "Skill Alignment Score",
+    "keyStrengths": "Key Strengths",
+    "remainingGaps": "Remaining Gaps",
+    "recruiterPitch": "Recruiter Pitch",
+    "error": "Something went wrong. Please try again."
+  }
+}
