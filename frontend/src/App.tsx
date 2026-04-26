@@ -62,27 +62,54 @@ export default function App() {
 
       const decoder = new TextDecoder();
       let done = false;
+      let buffer = '';
 
       while (!done) {
         const { value, done: streamDone } = await reader.read();
         done = streamDone;
         if (!value) continue;
 
-        const chunk = decoder.decode(value, { stream: true });
-        const lines = chunk.split('\n').filter((l) => l.trim());
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split('\n');
+        // Keep the last (potentially incomplete) line in the buffer
+        buffer = lines.pop() || '';
 
         for (const line of lines) {
+          const trimmed = line.trim();
+          if (!trimmed) continue;
+
+          let event: any;
           try {
-            const event = JSON.parse(line);
-            if (event.type === 'progress') {
-              setProgress((prev) => [...prev, { agent: event.agent, message: event.message }]);
-            } else if (event.type === 'complete') {
-              setResult(event.data);
-            } else if (event.type === 'error') {
-              throw new Error(event.message);
-            }
-          } catch (e) {
-            // ignore malformed lines
+            event = JSON.parse(trimmed);
+          } catch {
+            console.warn('Malformed stream line (invalid JSON):', trimmed);
+            continue;
+          }
+
+          if (event.type === 'progress') {
+            setProgress((prev) => [...prev, { agent: event.agent, message: event.message }]);
+          } else if (event.type === 'complete') {
+            setResult(event.data);
+          } else if (event.type === 'error') {
+            throw new Error(event.message || 'Unknown stream error');
+          }
+        }
+      }
+
+      // Process any remaining data in buffer after stream ends
+      if (buffer.trim()) {
+        let event: any;
+        try {
+          event = JSON.parse(buffer.trim());
+        } catch {
+          console.warn('Malformed final stream line (invalid JSON):', buffer);
+        }
+
+        if (event) {
+          if (event.type === 'complete') {
+            setResult(event.data);
+          } else if (event.type === 'error') {
+            throw new Error(event.message || 'Unknown stream error');
           }
         }
       }
